@@ -1,0 +1,18 @@
+; Write  an AVR program to Data Transfer from ROM to RAM with Address 0X140  onwards
+
+.ORG 0
+.INCLUDE "M32DEF.INC"
+LDI ZH,HIGH(MYDATA<<1)
+LDI ZL,LOW(MYDATA<<1)
+LDI XH,0X01
+LDI XL,0X40
+
+L1: LPM R20, Z+
+	CPI R20,0
+	BREQ HERE
+	ST X+, R20
+	RJMP L1
+
+HERE: RJMP HERE
+
+MYDATA: .DB "THE WORLD PEACE",0
