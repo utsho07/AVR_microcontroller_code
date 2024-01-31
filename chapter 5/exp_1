@@ -1,0 +1,11 @@
+;1. Write  an AVR program to Using Branch Instruction Add Number 3 ten times  (3+3+3+3+..)
+
+.INCLUDE "M32DEF.INC"
+LDI R16, 10
+LDI R20, 0
+LDI R21, 3
+
+AGAIN: ADD R20, R21
+	   DEC R16
+	   BRNE AGAIN
+	   OUT PORTB, R20
