@@ -1,1 +1,9 @@
-e
+; Write  an AVR program to determine 
+; if RAM location 0x200 contains the value  of 0. If so, put 0x55 into it
+.INCLUDE "M32DEF.INC" 
+LDS R30, 0X200
+CPI R30, 0
+BRNE NEXT
+LDI R30, 0X55
+STS 0X200, R30
+NEXT: RJMP NEXT
