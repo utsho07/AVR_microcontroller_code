@@ -3,8 +3,8 @@
 
 LDI R16, 0x05   ; Load immediate value 0x05 into register R16
 LDI R20, 0x56   ; Load immediate value 0x56 into register R20
-LDI YH, 0x40    ; Load immediate value 0x40 into the high byte of register pair Y
-LDI YL, 0x01    ; Load immediate value 0x01 into the low byte of register pair Y
+LDI YL, 0x40    ; Load immediate value 0x40 into the high byte of register pair Y
+LDI YH, 0x01    ; Load immediate value 0x01 into the low byte of register pair Y
 
 K1: 
     ST Y+, R20   ; Store the contents of register R20 into the memory location pointed to by Y and increment Y
