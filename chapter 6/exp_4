@@ -1,0 +1,13 @@
+.INCLUDE "M32DEF.INC"
+
+
+    SBI DDRC, 3    ; Set bit 3 of PORTC as output
+
+HERE:
+    SBI PORTC, 3   ; Set bit 3 of PORTC high
+    NOP       ; Call NOP delay subroutine
+    NOP       ; Call NOP delay subroutine
+    CBI PORTC, 3   ; Clear bit 3 of PORTC
+    NOP       ; Call NOP delay subroutine
+    RJMP HERE      ; Repeat indefinitely
+
