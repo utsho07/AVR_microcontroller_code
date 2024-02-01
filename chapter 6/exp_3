@@ -1,0 +1,7 @@
+; Write  an bit manipulation program to turn a led connected on PB2 pin to on  and off with 
+; some random delay without disturbing rest of the pins
+
+SBI DDRB, 2
+AGAIN: SBI PORTB,2
+	   CBI PORTB,2
+	   RJMP AGAIN
