@@ -1,0 +1,11 @@
+; Door  alarm switch is connected to PB3 when door is open PB3 receives 0. 
+; At this condition turn on the buzzer connected to PC5 by 
+; sending  High to Low signal. Write  an AVR program for above condition.
+
+ CBI DDRB,3
+ SBI DDRC,5
+ HERE: SBIC PINB,3
+	   RJMP HERE
+	   SBI PORTC,5
+	   CBI PORTC,5
+	   RJMP HERE
